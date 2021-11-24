@@ -77,6 +77,13 @@ const Photo = () => {
         if(date === 29){
             setDisableForwardButton(true)
         }
+
+        let today = new Date()
+        let thisDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + (today.getDate() - 1)
+
+        if(`${year}-${month}-${date}` === thisDate){
+            setDisableForwardButton(true)
+        }
     }
 
     const backClickHandler = () => {
@@ -98,7 +105,7 @@ const Photo = () => {
     }
 
     const collectionChangeHandler = () => {
-        if(year < 2021)
+        if(year <= 2020)
         {   
             setDate(1)
             setMonth(1)
@@ -115,6 +122,19 @@ const Photo = () => {
     }
     const handleToggle = () => {
         setOpen(!open)
+    }
+    
+    
+    const todayHandler = () => {
+        let today = new Date()
+        let thisYear = today.getFullYear()
+        setYear(thisYear)
+        let thisMonth = today.getMonth()
+        setMonth(thisMonth + 1)
+        let thisDay = today.getDate()
+        setDate(thisDay)
+        setDisableBackButton(false)
+        setDisableForwardButton(true)
     }
 
 
@@ -133,6 +153,7 @@ const Photo = () => {
                 </IconButton>
             </Box>
             <Box my={2} display='flex' alignItems='center' flexDirection='column'>
+                <Button sx={{mb:2}} variant='contained' color='success' onClick={todayHandler} >View Today's APOD</Button>
                 <Button variant='contained' onClick={collectionChangeHandler} color='secondary' sx={{mb:2}}>Change Collection</Button>
                 <FormControl variant='standard' >
                     <Select value={month} onChange={handleChange} label="Month" className={classes.formText}  >
