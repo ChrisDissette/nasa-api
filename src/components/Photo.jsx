@@ -114,6 +114,7 @@ const Photo = () => {
             setDisableBackButton(true)
         } else {
             setYear(2010)
+            setDisableForwardButton(false)
         }
     }
 
