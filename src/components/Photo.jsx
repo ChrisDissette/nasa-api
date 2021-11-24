@@ -27,7 +27,7 @@ const Photo = () => {
     const [month, setMonth] = useState(1)
     const [disableForwardButton, setDisableForwardButton] = useState(false)
     const [disableBackButton, setDisableBackButton] = useState(true)
-    const [year, setYear] = useState(2010)
+    const [year, setYear] = useState(2020)
     const [imageString, setImageString] = useState("")
     const [titleString, setTitleString] = useState("")
     const [stringVariant, setStringVariant] = useState('')

@@ -1,5 +1,4 @@
 import Photo from './components/Photo'
-import Mars from './components/Mars'
 
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
