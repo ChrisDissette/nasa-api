@@ -105,16 +105,15 @@ const Photo = () => {
     }
 
     const collectionChangeHandler = () => {
+        setDate(1)
+        setMonth(1)
+        setDisableForwardButton(false)
+        setDisableBackButton(true)
         if(year <= 2020)
         {   
-            setDate(1)
-            setMonth(1)
             setYear(year + 1)
-            setDisableForwardButton(false)
-            setDisableBackButton(true)
         } else {
             setYear(2010)
-            setDisableForwardButton(false)
         }
     }
 
